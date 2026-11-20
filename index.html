@@ -968,7 +968,7 @@
         </div>
 
         <!-- Fixed Pack Selector: 10, 20, 40 -->
-        <div class="pack-section">
+        <div class="pack-section" id="mrpSection">
           <div class="pack-label">
             <span>Select Pack Size:</span>
             <span style="color: var(--accent); font-weight: 600;">In Stock – Ready to Ship</span>
@@ -1367,10 +1367,23 @@
       <div style="font-size: 0.76rem; color: var(--text-muted);" id="stickyPackText">Pack of 20 Cups</div>
       <div style="font-size: 1.12rem; font-weight: 800;" id="stickyPriceText">₹840 <span style="font-size:0.78rem; color:var(--accent);">Save 29%</span></div>
     </div>
-    <a id="stickyBuyBtn" href="#" target="_blank" rel="noopener" class="buy-btn">Buy Now →</a>
+    <button type="button" id="stickyBuyBtn" class="buy-btn">View All Options</button>
   </div>
 
   <script>
+
+	// Floating mobile/tablet Buy Now button scrolls to MRP section
+	const stickyBtn = document.getElementById("stickyBuyBtn");
+      stickyBtn.removeAttribute("href");
+      stickyBtn.onclick = (e) => {
+        e.preventDefault();
+        const mrpEl = document.getElementById("mrpSection");
+        if (mrpEl) {
+          const headerHeight = document.querySelector("header")?.offsetHeight || 70;
+          const y = mrpEl.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+          window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+        }
+      };
     // ==========================================
     // 1. PRODUCT CONFIGURATION
     // ==========================================
@@ -1505,17 +1518,17 @@ function selectPack(index) {
       });
 
       // Sticky bar button triggers the active Razorpay button or scrolls to it
-      const stickyBtn = document.getElementById("stickyBuyBtn");
-      stickyBtn.removeAttribute("href");
-      stickyBtn.onclick = (e) => {
-        e.preventDefault();
-        const activeRzpBtn = document.querySelector(`.rzp-pack-btn[data-pack-index="${index}"] button, .rzp-pack-btn[data-pack-index="${index}"] .razorpay-payment-button`);
-        if (activeRzpBtn) {
-          activeRzpBtn.click();
-        } else {
-          document.getElementById("razorpayButtonContainer").scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      };
+//       const stickyBtn = document.getElementById("stickyBuyBtn");
+//       stickyBtn.removeAttribute("href");
+//       stickyBtn.onclick = (e) => {
+//         e.preventDefault();
+//         const activeRzpBtn = document.querySelector(`.rzp-pack-btn[data-pack-index="${index}"] button, .rzp-pack-btn[data-pack-index="${index}"] .razorpay-payment-button`);
+//         if (activeRzpBtn) {
+//           activeRzpBtn.click();
+//         } else {
+//           document.getElementById("razorpayButtonContainer").scrollIntoView({ behavior: "smooth", block: "center" });
+//         }
+//       };
 
       document.getElementById("stickyPackText").textContent = `${pack.label} (${pack.qty} Cups)`;
       document.getElementById("stickyPriceText").innerHTML = `₹${pack.price} <span style="font-size:0.78rem; color:var(--accent);">Save ${discount}%</span>`;

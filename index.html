@@ -869,6 +869,27 @@
         width: 38%;
       }
     }
+
+
+    .razorpay-btn-slot {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .rzp-pack-btn {
+      display: none;
+      width: 100%;
+    }
+    .rzp-pack-btn.active {
+      display: flex;
+      justify-content: center;
+    }
+    .rzp-pack-btn form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -958,10 +979,18 @@
         </div>
 
         <!-- Razorpay Buy Now Button -->
-        <a id="buyNowBtn" href="#" target="_blank" rel="noopener" class="buy-btn">
-          <span>Buy Now via Razorpay</span>
-          <span>→</span>
-        </a>
+      <!-- Razorpay Payment Buttons (one per pack) -->
+      <div id="razorpayButtonContainer" class="razorpay-btn-slot">
+	<div class="rzp-pack-btn" data-pack-index="0">
+	  <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XP3EjP2PxaWQ" async></script></form>
+	</div>
+	<div class="rzp-pack-btn" data-pack-index="1">
+	  <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XeFFrnNsUoDJ" async></script></form>
+	</div>
+	<div class="rzp-pack-btn" data-pack-index="2">
+	  <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XfBvstJO2ocB" async></script></form>
+	</div>
+      </div>
 
         <div class="payment-trust">
           <span>🔒 100% Secure Payment</span>
@@ -1313,13 +1342,13 @@
         </div>
 
         <form class="contact-form" onsubmit="handleContact(event)">
-          <h3 style="font-size: 1.15rem; font-weight: 800;">Send a Quick Message</h3>
-          <input type="text" placeholder="Your Full Name" required />
-          <input type="tel" placeholder="Mobile Number (WhatsApp)" required />
-          <textarea rows="3" placeholder="How can we help you? (Order query / Bulk inquiry)" required></textarea>
-          <button type="submit">Send Message</button>
-          <div id="contactStatus" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;"></div>
-        </form>
+		<h3 style="font-size: 1.15rem; font-weight: 800;">Send a Quick Message</h3>
+		<input id="contactName" type="text" placeholder="Your Full Name" required />
+		<input id="contactPhone" type="tel" placeholder="Mobile Number (WhatsApp)" required />
+		<textarea id="contactMessage" rows="3" placeholder="How can we help you? (Order query / Bulk inquiry)" required></textarea>
+		<button type="submit">Send Message</button>
+		<div id="contactStatus" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;"></div>
+	      </form>
       </div>
     </div>
   </section>
@@ -1352,7 +1381,7 @@
         mrp: 590,
         price: 440,
         badge: "",
-        razorpayUrl: "https://rzp.io/l/solidifier-spitcup-10"
+        // razorpayUrl: "https://rzp.io/l/solidifier-spitcup-10"
       },
       {
         qty: 20,
@@ -1360,7 +1389,7 @@
         mrp: 1180,
         price: 840,
         badge: "Most Popular",
-        razorpayUrl: "https://rzp.io/l/solidifier-spitcup-20"
+        // razorpayUrl: "https://rzp.io/l/solidifier-spitcup-20"
       },
       {
         qty: 40,
@@ -1368,7 +1397,7 @@
         mrp: 2360,
         price: 1600,
         badge: "Best Value",
-        razorpayUrl: "https://rzp.io/l/solidifier-spitcup-40"
+        // razorpayUrl: "https://rzp.io/l/solidifier-spitcup-40"
       }
     ];
 
@@ -1437,7 +1466,29 @@
       }).join("");
     }
 
-    function selectPack(index) {
+//     function selectPack(index) {
+//       selectedPackIndex = index;
+//       const pack = PACKS[index];
+//       const discount = Math.round(((pack.mrp - pack.price) / pack.mrp) * 100);
+//       const perUnit = (pack.price / pack.qty).toFixed(2);
+
+//       document.getElementById("displayPrice").textContent = `₹${pack.price}`;
+//       document.getElementById("displayMrp").textContent = `MRP ₹${pack.mrp}`;
+//       document.getElementById("displayDiscount").textContent = `${discount}% OFF`;
+//       document.getElementById("perUnitText").textContent = `₹${perUnit} per cup`;
+
+//       const buyBtn = document.getElementById("buyNowBtn");
+//       const stickyBtn = document.getElementById("stickyBuyBtn");
+//       buyBtn.href = pack.razorpayUrl;
+//       stickyBtn.href = pack.razorpayUrl;
+
+//       document.getElementById("stickyPackText").textContent = `${pack.label} (${pack.qty} Cups)`;
+//       document.getElementById("stickyPriceText").innerHTML = `₹${pack.price} <span style="font-size:0.78rem; color:var(--accent);">Save ${discount}%</span>`;
+
+//       renderPacks();
+//     }
+
+function selectPack(index) {
       selectedPackIndex = index;
       const pack = PACKS[index];
       const discount = Math.round(((pack.mrp - pack.price) / pack.mrp) * 100);
@@ -1448,10 +1499,23 @@
       document.getElementById("displayDiscount").textContent = `${discount}% OFF`;
       document.getElementById("perUnitText").textContent = `₹${perUnit} per cup`;
 
-      const buyBtn = document.getElementById("buyNowBtn");
+      // Show only the payment button for the selected pack
+      document.querySelectorAll(".rzp-pack-btn").forEach((el, idx) => {
+        el.classList.toggle("active", idx === index);
+      });
+
+      // Sticky bar button triggers the active Razorpay button or scrolls to it
       const stickyBtn = document.getElementById("stickyBuyBtn");
-      buyBtn.href = pack.razorpayUrl;
-      stickyBtn.href = pack.razorpayUrl;
+      stickyBtn.removeAttribute("href");
+      stickyBtn.onclick = (e) => {
+        e.preventDefault();
+        const activeRzpBtn = document.querySelector(`.rzp-pack-btn[data-pack-index="${index}"] button, .rzp-pack-btn[data-pack-index="${index}"] .razorpay-payment-button`);
+        if (activeRzpBtn) {
+          activeRzpBtn.click();
+        } else {
+          document.getElementById("razorpayButtonContainer").scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      };
 
       document.getElementById("stickyPackText").textContent = `${pack.label} (${pack.qty} Cups)`;
       document.getElementById("stickyPriceText").innerHTML = `₹${pack.price} <span style="font-size:0.78rem; color:var(--accent);">Save ${discount}%</span>`;
@@ -1510,7 +1574,7 @@
         changeSlide(diff > 0 ? 1 : -1);
       }
     }, { passive: true });
-
+ 
     // ==========================================
     // 6. TABS, FAQ & CONTACT HANDLERS
     // ==========================================
@@ -1526,10 +1590,24 @@
     }
 
     function handleContact(e) {
-      e.preventDefault();
-      document.getElementById("contactStatus").textContent = "Thank you! Our team will contact you on WhatsApp/Phone shortly.";
-      e.target.reset();
-    }
+   e.preventDefault();
+
+   const name = document.getElementById("contactName").value.trim();
+   const phone = document.getElementById("contactPhone").value.trim();
+   const message = document.getElementById("contactMessage").value.trim();
+
+   const whatsappText =
+     `Hello Solidifier Team,%0A` +
+     `Name: ${encodeURIComponent(name)}%0A` +
+     `Mobile: ${encodeURIComponent(phone)}%0A` +
+     `Message: ${encodeURIComponent(message)}`;
+
+   const whatsappUrl = `https://wa.me/919313829678?text=${whatsappText}`;
+
+   window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+   document.getElementById("contactStatus").textContent = "Opening WhatsApp with your message...";
+   e.target.reset();
+ }
 
     // Initialize Page
     updateDailyMetrics();

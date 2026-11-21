@@ -1674,9 +1674,9 @@
 	//       num_items: pack.qty
 	//     });
 
-	console.log("InitiateCheckout", {currency: "INR", value: pack.price, contents: "Razorpay Checkout Initiated for : "+ pack.label + " & Qty is : " + pack.qty} );
+	console.log("ViewContent", {currency: "INR", value: pack?.price, num_items: pack.qty} );
 
-	fbq('track', 'InitiateCheckout', {currency: "INR", value: pack?.price, contents: "Razorpay Checkout Initiated for : "+ pack?.label + " & Qty is : " + pack?.qty});
+	fbq('track', 'ViewContent', {currency: "INR", value: pack?.price, num_items: pack.qty});
 	}
 
 	const container = document.querySelector(`.rzp-hidden-pack[data-pack-index="${packIndex}"]`);

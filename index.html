@@ -8,8 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
+
+
+<style>
+	:root {
       --primary: #0b5ed7;
       --primary-dark: #084298;
       --primary-light: #eef5ff;
@@ -391,7 +393,7 @@
     .pack-price { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-top: 2px; }
     .pack-unit { font-size: 0.74rem; color: var(--text-muted); margin-top: 2px; }
 
-    /* Buy Now CTA */
+    /* Buy Now CTA & Sticky Bar Button */
     .buy-btn {
       width: 100%;
       background: var(--primary);
@@ -751,6 +753,90 @@
     }
 
     /* =========================================
+       RAZORPAY CUSTOM PACK BUTTONS & WIDGETS
+       ========================================= */
+    .razorpay-btn-slot {
+      position: relative;
+      min-height: 54px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-rzp-btn {
+	width: 100%;
+	min-height: 68px;
+	padding: 20px 28px;
+	background: linear-gradient(180deg, #1670f0 0%, var(--primary) 100%);
+	color: var(--white);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-bottom: 3px solid var(--primary-dark);
+	border-radius: 14px;
+	font-family: inherit;
+	font-size: 1.12rem;
+	font-weight: 800;
+	letter-spacing: 0.2px;
+	line-height: 1.25;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	box-shadow: 0 10px 24px rgba(11, 94, 215, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+	transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
+	}
+
+	.custom-rzp-btn:hover {
+	background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+	transform: translateY(-2px);
+	box-shadow: 0 14px 28px rgba(8, 66, 152, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+	}
+
+	.custom-rzp-btn:active {
+	transform: translateY(1px);
+	border-bottom-width: 1px;
+	box-shadow: 0 4px 12px rgba(8, 66, 152, 0.25);
+	}
+
+	.custom-rzp-btn:focus-visible {
+	outline: 3px solid #93c5fd;
+	outline-offset: 3px;
+	}
+
+	@media (max-width: 600px) {
+	.custom-rzp-btn {
+	min-height: 62px;
+	padding: 18px 20px;
+	font-size: 1.04rem;
+	border-radius: 12px;
+	}
+	}
+
+    /* Controlled by pack selection in .pack-section */
+    .rzp-pack-btn {
+      display: none;
+    }
+
+    .rzp-pack-btn.active {
+      display: flex;
+    }
+
+    /* Hidden Razorpay script containers */
+    .rzp-hidden-widgets {
+	position: fixed;
+	left: -9999px;
+	top: 0;
+	opacity: 0;
+	pointer-events: none;
+	}
+
+	.rzp-hidden-pack,
+	.rzp-hidden-pack form {
+	display: block;
+	}
+
+    /* =========================================
        TABLET BREAKPOINT (641px to 1024px)
        ========================================= */
     @media (max-width: 1024px) {
@@ -868,29 +954,15 @@
       .spec-table td:first-child {
         width: 38%;
       }
+      .razorpay-btn-slot {
+        min-height: 50px;
+      }
+      .custom-rzp-btn {
+        padding: 15px 18px;
+        font-size: 0.98rem;
+      }
     }
-
-
-    .razorpay-btn-slot {
-      min-height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .rzp-pack-btn {
-      display: none;
-      width: 100%;
-    }
-    .rzp-pack-btn.active {
-      display: flex;
-      justify-content: center;
-    }
-    .rzp-pack-btn form {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-  </style>
+</style>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -1008,14 +1080,49 @@
         <!-- Razorpay Buy Now Button -->
       <!-- Razorpay Payment Buttons (one per pack) -->
       <div id="razorpayButtonContainer" class="razorpay-btn-slot">
-	<div class="rzp-pack-btn" data-pack-index="0">
-	  <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XP3EjP2PxaWQ" async></script></form>
-	</div>
-	<div class="rzp-pack-btn" data-pack-index="1">
-	  <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XeFFrnNsUoDJ" async></script></form>
-	</div>
-	<div class="rzp-pack-btn" data-pack-index="2">
-	  <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XfBvstJO2ocB" async></script></form>
+	<button
+	  type="button"
+	  id="buyBtnPack10"
+	  class="custom-rzp-btn rzp-pack-btn"
+	  data-pack-index="0"
+	  data-pack-qty="10"
+	  onclick="triggerRazorpayPack(0)"
+	>
+	  Buy Now
+	</button>
+      
+	<button
+	  type="button"
+	  id="buyBtnPack20"
+	  class="custom-rzp-btn rzp-pack-btn"
+	  data-pack-index="1"
+	  data-pack-qty="20"
+	  onclick="triggerRazorpayPack(1)"
+	>
+	  Buy Now
+	</button>
+      
+	<button
+	  type="button"
+	  id="buyBtnPack40"
+	  class="custom-rzp-btn rzp-pack-btn"
+	  data-pack-index="2"
+	  data-pack-qty="40"
+	  onclick="triggerRazorpayPack(2)"
+	>
+	  Buy Now
+	</button>
+      
+	<div class="rzp-hidden-widgets" aria-hidden="true">
+	  <div class="rzp-hidden-pack" data-pack-index="0">
+	    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XP3EjP2PxaWQ" async></script></form>
+	  </div>
+	  <div class="rzp-hidden-pack" data-pack-index="1">
+	    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XeFFrnNsUoDJ" async></script></form>
+	  </div>
+	  <div class="rzp-hidden-pack" data-pack-index="2">
+	    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U2XfBvstJO2ocB" async></script></form>
+	  </div>
 	</div>
       </div>
 
@@ -1399,6 +1506,9 @@
 
   <script>
 
+
+
+
 	// Floating mobile/tablet Buy Now button scrolls to MRP section
 	const stickyBtn = document.getElementById("stickyBuyBtn");
       stickyBtn.removeAttribute("href");
@@ -1527,41 +1637,60 @@
 
 //       renderPacks();
 //     }
-
 function selectPack(index) {
-      selectedPackIndex = index;
-      const pack = PACKS[index];
-      const discount = Math.round(((pack.mrp - pack.price) / pack.mrp) * 100);
-      const perUnit = (pack.price / pack.qty).toFixed(2);
+  selectedPackIndex = index;
+  const pack = PACKS[index];
+  const discount = Math.round(((pack.mrp - pack.price) / pack.mrp) * 100);
+  const perUnit = (pack.price / pack.qty).toFixed(2);
 
-      document.getElementById("displayPrice").textContent = `₹${pack.price}`;
-      document.getElementById("displayMrp").textContent = `MRP ₹${pack.mrp}`;
-      document.getElementById("displayDiscount").textContent = `${discount}% OFF`;
-      document.getElementById("perUnitText").textContent = `₹${perUnit} per cup`;
+  document.getElementById("displayPrice").textContent = `₹${pack.price}`;
+  document.getElementById("displayMrp").textContent = `MRP ₹${pack.mrp}`;
+  document.getElementById("displayDiscount").textContent = `${discount}% OFF`;
+  document.getElementById("perUnitText").textContent = `₹${perUnit} per cup`;
 
-      // Show only the payment button for the selected pack
-      document.querySelectorAll(".rzp-pack-btn").forEach((el, idx) => {
-        el.classList.toggle("active", idx === index);
-      });
+  // Show only the <button> matching the selected pack from .pack-section
+  document.querySelectorAll(".rzp-pack-btn").forEach((btn) => {
+    const btnIndex = Number(btn.getAttribute("data-pack-index"));
+    btn.classList.toggle("active", btnIndex === index);
+  });
 
-      // Sticky bar button triggers the active Razorpay button or scrolls to it
-//       const stickyBtn = document.getElementById("stickyBuyBtn");
-//       stickyBtn.removeAttribute("href");
-//       stickyBtn.onclick = (e) => {
-//         e.preventDefault();
-//         const activeRzpBtn = document.querySelector(`.rzp-pack-btn[data-pack-index="${index}"] button, .rzp-pack-btn[data-pack-index="${index}"] .razorpay-payment-button`);
-//         if (activeRzpBtn) {
-//           activeRzpBtn.click();
-//         } else {
-//           document.getElementById("razorpayButtonContainer").scrollIntoView({ behavior: "smooth", block: "center" });
-//         }
-//       };
+  document.getElementById("stickyPackText").textContent = `${pack.label} (${pack.qty} Cups)`;
+  document.getElementById("stickyPriceText").innerHTML = `₹${pack.price} <span style="font-size:0.78rem; color:var(--accent);">Save ${discount}%</span>`;
 
-      document.getElementById("stickyPackText").textContent = `${pack.label} (${pack.qty} Cups)`;
-      document.getElementById("stickyPriceText").innerHTML = `₹${pack.price} <span style="font-size:0.78rem; color:var(--accent);">Save ${discount}%</span>`;
+  renderPacks();
+}
+function triggerRazorpayPack(packIndex, attempt = 0) {
+  const pack = PACKS[packIndex];
+  if (!pack) return;
 
-      renderPacks();
-    }
+  // Fire Meta Pixel InitiateCheckout only on the first click attempt
+  if (attempt === 0 && typeof fbq === "function") {
+    fbq("track", "InitiateCheckout", {
+      content_name: `Solidifier 450ml Spit Cup - ${pack.label}`,
+      content_ids: [`spitcup_${pack.qty}`],
+      content_type: "product",
+      value: pack.price,
+      currency: "INR",
+      num_items: pack.qty
+    });
+  }
+
+  const container = document.querySelector(`.rzp-hidden-pack[data-pack-index="${packIndex}"]`);
+  const rzpBtn = container ? container.querySelector("button, a, input[type='submit']") : null;
+
+  if (rzpBtn) {
+    rzpBtn.click();
+    return;
+  }
+
+  // Wait up to 3 seconds (15 x 200ms) if Razorpay's script is still finishing loading
+  if (attempt < 15) {
+    setTimeout(() => triggerRazorpayPack(packIndex, attempt + 1), 200);
+    return;
+  }
+
+  alert("Razorpay button did not load. Please check your internet/ad-blocker or refresh the page.");
+}
 
     // ==========================================
     // 5. CAROUSEL LOGIC + TOUCH SWIPE SUPPORT

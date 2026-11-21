@@ -1677,6 +1677,7 @@
 	console.log("ViewContent", {currency: "INR", value: pack?.price, num_items: pack.qty} );
 
 	fbq('track', 'ViewContent', {currency: "INR", value: pack?.price, num_items: pack.qty});
+		fbq('track', 'InitiateCheckout');
 	}
 
 	const container = document.querySelector(`.rzp-hidden-pack[data-pack-index="${packIndex}"]`);

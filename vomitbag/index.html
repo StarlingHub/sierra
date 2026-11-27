@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solidifier® Disposable Vomit Bag – Instant Liquid-to-Solid & Sealable</title>
+<meta name="description" content="Leak-proof, odour-locking disposable vomit bag that turns liquid bio-waste into solid gel instantly. Peel-and-fold seal for flights, cars, motion sickness & hospitals." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #14532d;
+  --primary-dark: #0f3d21;
+  --primary-light: #ecfdf5;
+  --accent: #16a34a;
+  --accent-light: #dcfce7;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border: #e2e8f0;
+  --bg-soft: #f8fafc;
+  --white: #ffffff;
+  --star: #f59e0b;
+  --danger: #dc2626;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Announcement Bar */
+.top-bar {
+  background: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+  font-size: clamp(0.75rem, 2vw, 0.84rem);
+  font-weight: 600;
+  padding: 8px 14px;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+}
+
+/* Header & Responsive Navigation */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  font-size: clamp(1.25rem, 3vw, 1.45rem);
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+.brand sup { font-size: 0.68rem; }
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--primary); }
+.nav-pill {
+  background: var(--primary-light);
+  color: var(--primary) !important;
+  padding: 6px 14px;
+  border-radius: 99px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Product Grid (Laptop/Desktop Default) */
+.product-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 44px;
+  padding: 32px 0 52px;
+  align-items: start;
+}
+
+/* Carousel Gallery */
+.gallery-wrapper {
+  position: sticky;
+  top: 78px;
+  min-width: 0;
+}
+.stage-container {
+  position: relative;
+  width: 100%;
+}
+.main-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y;
+}
+.main-stage img, .main-stage video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.94);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text-main);
+  transition: all 0.2s;
+  z-index: 5;
+}
+.carousel-btn:hover { background: var(--primary); color: var(--white); }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.thumbs-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.thumb {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--bg-soft);
+  transition: border-color 0.2s;
+}
+.thumb.active { border-color: var(--primary); }
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumb-video-badge {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,0.45);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+/* Product Details Column */
+.product-info-col {
+  min-width: 0;
+}
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 99px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.product-title {
+  font-size: clamp(1.38rem, 2.6vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+.product-subtitle {
+  font-size: clamp(0.92rem, 1.5vw, 1rem);
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+/* Rating & Daily Social Proof */
+.rating-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+.stars { color: var(--star); letter-spacing: 1px; font-weight: 700; }
+.rating-link { color: var(--text-muted); text-decoration: underline; font-weight: 500; }
+
+.live-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  font-size: 0.84rem;
+}
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #92400e;
+}
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ea580c;
+  flex-shrink: 0;
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.6); }
+  70% { box-shadow: 0 0 0 7px rgba(234, 88, 12, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+}
+
+/* MRP & Price Box */
+.price-box {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.selling-price {
+  font-size: clamp(1.7rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--text-main);
+}
+.mrp-price {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+.discount-pill {
+  background: var(--accent-light);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+.tax-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* Pack Selector */
+.pack-section { margin-bottom: 22px; }
+.pack-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.pack-card {
+  position: relative;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 15px 8px 12px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--white);
+  transition: all 0.2s;
+  user-select: none;
+}
+.pack-card:hover { border-color: #86efac; }
+.pack-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(20, 83, 45, 0.12);
+}
+.pack-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 99px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.pack-qty { font-size: 0.98rem; font-weight: 800; color: var(--text-main); }
+.pack-price { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-top: 2px; }
+.pack-unit { font-size: 0.74rem; color: var(--text-muted); margin-top: 2px; }
+
+/* Buy Now CTA & Sticky Bar Button */
+.buy-btn {
+  width: 100%;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(20, 83, 45, 0.28);
+  transition: transform 0.15s, background 0.2s;
+  text-decoration: none;
+}
+.buy-btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.payment-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 14px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Quick Benefits Highlights */
+.quick-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.qb-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.qb-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Section Styling */
+section { padding: clamp(40px, 6vw, 64px) 0; }
+.bg-soft { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto clamp(24px, 4vw, 36px);
+}
+.section-header h2 {
+  font-size: clamp(1.38rem, 2.8vw, 1.8rem);
+  font-weight: 800;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.section-header p { color: var(--text-muted); font-size: clamp(0.9rem, 1.5vw, 0.98rem); }
+
+/* Dedicated Video Section */
+.video-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 36px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(18px, 3vw, 28px);
+  box-shadow: var(--shadow-md);
+}
+.video-container {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0f172a;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-steps { list-style: none; margin-top: 16px; display: grid; gap: 14px; }
+.video-steps li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.92rem;
+}
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Benefits Cards Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.benefit-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.benefit-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.benefit-card .icon { font-size: 1.75rem; margin-bottom: 10px; }
+.benefit-card h3 { font-size: 1.06rem; font-weight: 700; margin-bottom: 6px; }
+.benefit-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+/* Product Info Tabs */
+.tabs-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(18px, 3vw, 28px);
+}
+.tabs-nav {
+  display: flex;
+  gap: 6px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 22px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 11px 16px;
+  font-family: inherit;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+.tab-panel { display: none; font-size: 0.94rem; }
+.tab-panel.active { display: block; }
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.spec-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.spec-table td:first-child {
+  font-weight: 700;
+  background: var(--bg-soft);
+  width: 34%;
+}
+
+/* Reviews Section */
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+  background: var(--primary-light);
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  margin-bottom: 26px;
+}
+.big-rating { font-size: clamp(2.1rem, 4vw, 2.6rem); font-weight: 800; color: var(--primary); line-height: 1; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.verified-badge {
+  font-size: 0.74rem;
+  color: var(--accent);
+  font-weight: 700;
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.review-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 6px; }
+.review-text { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px; }
+.reviewer-meta { font-size: 0.82rem; font-weight: 600; color: var(--text-main); }
+
+/* FAQ Accordion */
+.faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 16px 18px;
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  padding: 0 18px;
+  color: var(--text-muted);
+  font-size: 0.91rem;
+}
+.faq-item.open .faq-answer {
+  max-height: 260px;
+  padding-bottom: 16px;
+}
+.faq-icon { font-size: 1.25rem; color: var(--primary); transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(20px, 3vw, 32px);
+}
+.contact-methods { display: grid; gap: 14px; margin-top: 18px; }
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  word-break: break-word;
+}
+.contact-form { display: grid; gap: 12px; align-content: start; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+.contact-form button {
+  background: var(--text-main);
+  color: var(--white);
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 36px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+footer a { color: #e2e8f0; text-decoration: none; margin: 0 10px; }
+
+/* Sticky Mobile/Tablet Bar */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 60;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+}
+.sticky-bar .buy-btn {
+  width: auto;
+  padding: 11px 20px;
+  font-size: 0.94rem;
+  flex-shrink: 0;
+}
+
+/* =========================================
+RAZORPAY CUSTOM PACK BUTTONS & WIDGETS
+========================================= */
+.razorpay-btn-slot {
+  position: relative;
+  min-height: 54px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-rzp-btn {
+  width: 100%;
+  min-height: 68px;
+  padding: 20px 28px;
+  background: linear-gradient(180deg, #1b6e3c 0%, var(--primary) 100%);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 3px solid var(--primary-dark);
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1.25;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 24px rgba(20, 83, 45, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.custom-rzp-btn:hover {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 61, 33, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.custom-rzp-btn:active {
+  transform: translateY(1px);
+  border-bottom-width: 1px;
+  box-shadow: 0 4px 12px rgba(15, 61, 33, 0.25);
+}
+
+.custom-rzp-btn:focus-visible {
+  outline: 3px solid #86efac;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .custom-rzp-btn {
+    min-height: 62px;
+    padding: 18px 20px;
+    font-size: 1.04rem;
+    border-radius: 12px;
+  }
+}
+
+/* Controlled by pack selection in .pack-section */
+.rzp-pack-btn {
+  display: none;
+}
+
+.rzp-pack-btn.active {
+  display: flex;
+}
+
+/* Hidden Razorpay script containers */
+.rzp-hidden-widgets {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rzp-hidden-pack,
+.rzp-hidden-pack form {
+  display: block;
+}
+
+/* =========================================
+TABLET BREAKPOINT (641px to 1024px)
+========================================= */
+@media (max-width: 1024px) {
+  .product-hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    padding: 24px 0 40px;
+  }
+  .benefits-grid,
+  .reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .video-showcase {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* =========================================
+SMALL TABLET & MOBILE NAV (<= 820px)
+========================================= */
+@media (max-width: 820px) {
+  body {
+    padding-bottom: 76px;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 8px 20px 16px;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.96rem;
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+  .product-hero,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .gallery-wrapper {
+    position: static;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .sticky-bar {
+    display: flex;
+  }
+}
+
+/* =========================================
+MOBILE BREAKPOINT (<= 600px)
+========================================= */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+  .nav-container {
+    padding: 10px 16px;
+  }
+  .live-metrics {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .pack-grid {
+    gap: 8px;
+  }
+  .pack-card {
+    padding: 14px 6px 10px;
+  }
+  .pack-qty { font-size: 0.88rem; }
+  .pack-price { font-size: 0.9rem; }
+  .pack-unit { font-size: 0.7rem; }
+  .quick-benefits {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .benefits-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .thumb {
+    width: 58px;
+    height: 58px;
+  }
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+  .spec-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  .spec-table td:first-child {
+    width: 38%;
+  }
+  .razorpay-btn-slot {
+    min-height: 50px;
+  }
+  .custom-rzp-btn {
+    padding: 15px 18px;
+    font-size: 0.98rem;
+  }
+}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+! function (f, b, e, v, n, t, s) {
+  if (f.fbq) return;
+  n = f.fbq = function () {
+    n.callMethod ?
+      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+  };
+  if (!f._fbq) f._fbq = n;
+  n.push = n;
+  n.loaded = !0;
+  n.version = '2.0';
+  n.queue = [];
+  t = b.createElement(e);
+  t.async = !0;
+  t.src = v;
+  s = b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t, s)
+}(window, document, 'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1129161050020020');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1129161050020020&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<div class="top-bar">
+🇮🇳 Support Clean India • Free Pan-India Shipping • Best Quality Vomit Bags
+</div>
+
+<header>
+<div class="nav-container">
+  <a href="/vomitbag" class="brand">Solidifier<sup>®</sup></a>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+  <nav class="nav-links" id="navLinks">
+    <a href="#video-demo" onclick="closeMobileMenu()">How It Works</a>
+    <a href="#benefits" onclick="closeMobileMenu()">Benefits</a>
+    <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
+    <a href="/spitcup" class="nav-pill" onclick="closeMobileMenu()">Shop Spit Cups →</a>
+  </nav>
+</div>
+</header>
+
+<main class="container">
+<!-- HERO SECTION -->
+<div class="product-hero">
+  <!-- Left: Image & Video Carousel -->
+  <div class="gallery-wrapper">
+    <div class="stage-container">
+      <div class="main-stage" id="mainStage">
+      <!-- Rendered by JS -->
+      </div>
+      <button class="carousel-btn prev" onclick="changeSlide(-1)" aria-label="Previous">&#10094;</button>
+      <button class="carousel-btn next" onclick="changeSlide(1)" aria-label="Next">&#10095;</button>
+    </div>
+
+    <div class="thumbs-row" id="thumbsRow">
+    <!-- Rendered by JS -->
+    </div>
+  </div>
+
+  <!-- Right: Purchase Box -->
+  <div class="product-info-col">
+    <span class="badge-tag">Peel & Seal Lock • Instant Gel Solidification</span>
+    <h1 class="product-title">Solidifier® Disposable Vomit Bag – Turns Liquid Bio-Waste Into Solid</h1>
+    <p class="product-subtitle">
+      Pocket-sized, leak-proof emesis bag with an adhesive peel-and-fold seal. Instantly solidifies liquid and locks in odour during car rides, flights, pregnancy nausea & hospital care.
+    </p>
+
+    <div class="rating-bar">
+      <span class="stars">★★★★★</span>
+      <strong>4.9 / 5</strong>
+      <a href="#reviews" class="rating-link">(1,890 Verified Reviews)</a>
+    </div>
+
+    <!-- Auto-updating Daily Social Proof -->
+    <div class="live-metrics">
+      <div class="metric-item">
+        <span class="pulse-dot"></span>
+        <span><strong id="dailyViews">--</strong> people viewed today</span>
+      </div>
+      <div class="metric-item">
+        <span>🔥 <strong id="monthlySold">--</strong> packs sold this month</span>
+      </div>
+    </div>
+
+    <!-- MRP & Dynamic Pricing -->
+    <div class="price-box">
+      <div class="price-row">
+        <span class="selling-price" id="displayPrice">₹449</span>
+        <span class="mrp-price" id="displayMrp">MRP ₹849</span>
+        <span class="discount-pill" id="displayDiscount">47% OFF</span>
+      </div>
+      <div class="tax-note">
+        Inclusive of all taxes • Free Shipping All India • <span id="perUnitText">₹22.45 per bag</span>
+      </div>
+    </div>
+
+    <!-- Fixed Pack Selector: 10, 20, 40 -->
+    <div class="pack-section" id="mrpSection">
+      <div class="pack-label">
+        <span>Select Pack Size:</span>
+        <span style="color: var(--accent); font-weight: 600;">In Stock – Ready to Ship</span>
+      </div>
+      <div class="pack-grid" id="packGrid">
+      <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Razorpay Payment Buttons (one per pack) -->
+    <div id="razorpayButtonContainer" class="razorpay-btn-slot">
+      <button
+        type="button"
+        id="buyBtnPack10"
+        class="custom-rzp-btn rzp-pack-btn"
+        data-pack-index="0"
+        data-pack-qty="10"
+        onclick="triggerRazorpayPack(0)"
+      >
+        Buy Now
+      </button>
+
+      <button
+        type="button"
+        id="buyBtnPack20"
+        class="custom-rzp-btn rzp-pack-btn"
+        data-pack-index="1"
+        data-pack-qty="20"
+        onclick="triggerRazorpayPack(1)"
+      >
+        Buy Now
+      </button>
+
+      <button
+        type="button"
+        id="buyBtnPack40"
+        class="custom-rzp-btn rzp-pack-btn"
+        data-pack-index="2"
+        data-pack-qty="40"
+        onclick="triggerRazorpayPack(2)"
+      >
+        Buy Now
+      </button>
+
+      <div class="rzp-hidden-widgets" aria-hidden="true">
+        <div class="rzp-hidden-pack" data-pack-index="0">
+          <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U5DwZx1gnpUsee" async> </script> </form>
+        </div>
+        <div class="rzp-hidden-pack" data-pack-index="1">
+          <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U5DxJH8njo6ZO5" async> </script> </form>
+        </div>
+        <div class="rzp-hidden-pack" data-pack-index="2">
+          <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U5DxnDdKMSRpJd" async> </script> </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-trust">
+      <span>🔒 100% Secure Payment</span>
+      <span>• UPI / GPay / Cards / NetBanking</span>
+      <span>• Free Shipping All India</span>
+    </div>
+
+    <!-- Quick Feature Highlights -->
+    <div class="quick-benefits">
+      <div class="qb-item"><div class="qb-icon">⚡</div> Liquid-to-Solid in Seconds</div>
+      <div class="qb-item"><div class="qb-icon">🔒</div> Peel & Fold Leak-Proof Seal</div>
+      <div class="qb-item"><div class="qb-icon">🌬️</div> Zero Mess & Odour Control</div>
+      <div class="qb-item"><div class="qb-icon">🎒</div> Ultra-Compact Glovebox Fit</div>
+    </div>
+  </div>
+</div>
+</main>
+
+<!-- DEDICATED VIDEO SECTION -->
+<section id="video-demo" class="bg-soft">
+<div class="container">
+  <div class="section-header">
+    <h2>See Solidifier® Vomit Bag in Action</h2>
+    <p>Watch how our absorbent liner solidifies liquid waste and seals shut cleanly in three simple steps.</p>
+  </div>
+
+  <div class="video-showcase">
+    <div class="video-container">
+      <video controls playsinline poster="assets/vomitbag-2.jpg">
+        <source src="assets/vomitbag-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div>
+      <span class="badge-tag">Discreet • Hygienic • Safe</span>
+      <h3 style="font-size: clamp(1.2rem, 2.5vw, 1.4rem); font-weight: 800; margin-bottom: 10px;">No Splash-Back, No Spills, No Smell</h3>
+      <p style="color: var(--text-muted); font-size: 0.94rem;">
+        Ordinary polythene bags tear, spill in moving vehicles, and leave foul odours. Solidifier® turns liquid into a solid gel and seals airtight with a built-in adhesive strip.
+      </p>
+      <ul class="video-steps">
+        <li>
+          <div class="step-num">1</div>
+          <div><strong>Open Wide Pouch:</strong> Generous wide mouth prevents spills for both kids and adults during motion sickness.</div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div><strong>Instant Solidification:</strong> Inner solidifying agent absorbs liquid bio-waste and converts it into a firm solid.</div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div><strong>Remove Strip & Fold to Seal:</strong> Peel off the top adhesive liner, fold over, and press to lock odour and liquid inside.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- BENEFITS SECTION -->
+<section id="benefits">
+<div class="container">
+  <div class="section-header">
+    <h2>Designed for Emergencies Anywhere</h2>
+    <p>Trusted by healthcare professionals, frequent flyers, and families on road trips.</p>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="icon">🧪</div>
+      <h3>Instant Liquid-to-Solid</h3>
+      <p>Rapid-action solidifying crystals absorb vomit and liquid waste on contact, preventing sloshing or leakage.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">✉️</div>
+      <h3>Built-In Peel & Seal Closure</h3>
+      <p>Simply remove the paper strip at the top and fold to seal—no messy knots required when you're feeling unwell.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">✈️</div>
+      <h3>Flight & Hill-Station Essential</h3>
+      <p>Flat, lightweight pouch fits effortlessly inside handbags, seat pockets, gloveboxes, and trekking backpacks.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">🤰</div>
+      <h3>Pregnancy & Morning Sickness</h3>
+      <p>Discreet, odour-locking relief for expectant mothers commuting to work or resting at home.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">🏥</div>
+      <h3>Hospital, Chemo & Home Care</h3>
+      <p>Maintains a sanitary environment for bedridden patients, post-op recovery, and TB/respiratory care.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">🌿</div>
+      <h3>Eco-Friendly & Single Use</h3>
+      <p>Hygienic single-use containment keeps vehicles, upholstery, and surroundings clean and germ-free.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PRODUCT DETAILS TABS -->
+<section class="bg-soft">
+<div class="container">
+  <div class="section-header">
+    <h2>Complete Product Information</h2>
+  </div>
+
+  <div class="tabs-card">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="openTab(event, 'tab-desc')">Description</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-how')">How to Use</button>
+      <button class="tab-btn" onclick="openTab(event, 'tab-specs')">Specifications & Use Cases</button>
+    </div>
+
+    <div id="tab-desc" class="tab-panel active">
+      <p style="margin-bottom: 12px;">
+        <strong>Solidifier® Disposable Vomit Bag</strong> is a leak-proof emergency emesis pouch engineered to solidify liquid bio-waste immediately. Ideal for motion sickness, car sickness, air travel, pregnancy nausea, hospital wards, and outdoor emergencies.
+      </p>
+      <p>
+        Unlike flimsy plastic bags that leak or emit unpleasant odours, Solidifier® features a reinforced gusseted pouch, an internal solidifying formula, and an adhesive peel-and-fold seal so you can carry or dispose of it with complete peace of mind.
+      </p>
+    </div>
+
+    <div id="tab-how" class="tab-panel">
+      <ol style="padding-left: 20px; display: grid; gap: 10px;">
+        <li><strong>Open the Pouch:</strong> Pull the top opening wide apart. Leave the solidifying agent inside the bag.</li>
+        <li><strong>Use During Nausea:</strong> Hold the wide rim securely around the mouth. Liquid begins solidifying immediately.</li>
+        <li><strong>Peel & Fold to Seal:</strong> Remove the protective paper strip along the top flap, fold the top down, and press firmly to create a leak-proof seal.</li>
+        <li><strong>Dispose Hygienically:</strong> Discard the sealed pouch into a waste bin.</li>
+      </ol>
+    </div>
+
+    <div id="tab-specs" class="tab-panel">
+      <div class="table-responsive">
+        <table class="spec-table">
+          <tr><td>Brand</td><td>Solidifier®</td></tr>
+          <tr><td>Closure Type</td><td>Adhesive Peel-Strip & Fold Seal</td></tr>
+          <tr><td>Technology</td><td>Instant Liquid-to-Solid Bio-Waste Solidifier + Odour Control</td></tr>
+          <tr><td>Shelf Life</td><td>36 Months from Date of Manufacture</td></tr>
+          <tr><td>Ideal For</td><td>Flight Travelling, Motion Sickness, Car Rides, Hospitals, Home Patient Care, Outdoor & Emergency Kits</td></tr>
+          <tr><td>Country of Origin</td><td>India</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- VERIFIED REVIEWS SECTION -->
+<section id="reviews">
+<div class="container">
+  <div class="section-header">
+    <h2>Customer Reviews</h2>
+    <p>Rated 4.9/5 by parents, travellers, and medical caregivers.</p>
+  </div>
+
+  <div class="reviews-summary">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div class="big-rating">4.9</div>
+      <div>
+        <div class="stars" style="font-size: 1.15rem;">★★★★★</div>
+        <div style="font-size: 0.86rem; color: var(--text-muted);">Based on 1,890 verified buyers</div>
+      </div>
+    </div>
+    <div style="font-size: 0.9rem; font-weight: 700; color: var(--accent);">
+      ✓ 98% of customers recommend this product
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div>
+        <div class="review-header">
+          <span class="stars">★★★★★</span>
+          <span class="verified-badge">✓ Verified Buyer</span>
+        </div>
+        <div class="review-title">Saved our Manali road trip with kids!</div>
+        <p class="review-text">My 6-year-old gets severe motion sickness on ghat roads. These bags turned everything into solid gel right away and sealed shut without a single drop leaking in the car.</p>
+      </div>
+      <div class="reviewer-meta">Sneha Kulkarni • Mumbai</div>
+    </div>
+
+    <div class="review-card">
+      <div>
+        <div class="review-header">
+          <span class="stars">★★★★★</span>
+          <span class="verified-badge">✓ Verified Buyer</span>
+        </div>
+        <div class="review-title">Must-have during first trimester pregnancy</div>
+        <p class="review-text">Kept a pack in my office bag and bedside drawer during morning sickness. The peel-and-fold seal locks the smell completely until you can throw it out.</p>
+      </div>
+      <div class="reviewer-meta">Pooja Sharma • Delhi NCR</div>
+    </div>
+
+    <div class="review-card">
+      <div>
+        <div class="review-header">
+          <span class="stars">★★★★★</span>
+          <span class="verified-badge">✓ Verified Buyer</span>
+        </div>
+        <div class="review-title">Very hygienic for chemotherapy patient care</div>
+        <p class="review-text">Much cleaner and safer than washbasins or plastic bags. Solidifies quickly and gives dignity and comfort to the patient. Ordering Pack of 40 again.</p>
+      </div>
+      <div class="reviewer-meta">Vikramaditya Rao • Hyderabad</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ SECTION -->
+<section id="faq" class="bg-soft">
+<div class="container">
+  <div class="section-header">
+    <h2>Frequently Asked Questions</h2>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>What is the SOLIDIFIER Vomit Bag?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        A disposable, leak-proof emesis pouch with an internal solidifying agent and peel-and-fold seal for hygienic liquid waste containment.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Will the bag leak if it tips over in a moving car?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        No. Within seconds, the inner solidifying agent converts liquid into a thick, non-flowing solid gel, and the adhesive peel-and-fold top strip seals the pouch shut.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Is the Vomit Bag reusable?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        No. It is a hygienic single-use disposable bag designed to be sealed and discarded after use.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Can both children and adults use it easily?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Yes, the wide pouch opening is designed to fit comfortably around the mouth for both young children and adults without splash-back.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How compact are the bags for carrying in a purse or glovebox?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Each bag folds completely flat like a thin envelope, allowing you to easily store several bags in a car glovebox, handbag, or flight carry-on pouch.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How do I place an order?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Choose your preferred pack size (10, 20, or 40 bags) and press Buy Now.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How do I pay?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Buy Now opens Razorpay's secure payment flow, supporting UPI, cards, and netbanking depending on enabled options.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How will I receive my order confirmation after Razorpay payment?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Once you complete your address and payment on Razorpay, you receive an email or SMS receipt along with dispatch and tracking updates.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How can I contact SOLIDIFIER?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Call or WhatsApp +91 9313829678, or email solidifier@yahoo.com.
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT US SECTION -->
+<section id="contact">
+<div class="container">
+  <div class="section-header">
+    <h2>Contact Us & Bulk Orders</h2>
+    <p>Have a question about delivery, travel kits, or hospital supply? Get in touch.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div>
+      <h3 style="font-size: 1.25rem; font-weight: 800;">Solidifier® Customer Support</h3>
+      <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 6px;">
+        Mon – Sat: 9:30 AM to 6:30 PM IST
+      </p>
+      <div class="contact-methods">
+        <div class="contact-card">
+          <div style="font-size: 1.4rem;">📞</div>
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Phone / WhatsApp Support</div>
+            <strong style="font-size: 0.96rem;">+91 93138 29678</strong>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div style="font-size: 1.4rem;">✉️</div>
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Email Us</div>
+            <strong style="font-size: 0.96rem;">solidifier@yahoo.com</strong>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div style="font-size: 1.4rem;">📍</div>
+          <div>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">Dispatch & Office</div>
+            <strong style="font-size: 0.96rem;">Gujarat, India</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleContact(event)">
+      <h3 style="font-size: 1.15rem; font-weight: 800;">Send a Quick Message</h3>
+      <input id="contactName" type="text" placeholder="Your Full Name" required />
+      <input id="contactPhone" type="tel" placeholder="Mobile Number (WhatsApp)" required />
+      <textarea id="contactMessage" rows="3" placeholder="How can we help you? (Order query / Bulk inquiry)" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="contactStatus" style="font-size: 0.85rem; color: var(--accent); font-weight: 600;"></div>
+    </form>
+  </div>
+</div>
+</section>
+
+<footer>
+<div style="margin-bottom: 12px;">
+  <a href="/vomitbag">Vomit Bags</a>
+  <a href="/spitcup">Spit Cups</a>
+  <a href="#contact">Contact Us</a>
+</div>
+<p>© <span id="year"></span> Solidifier®. All Rights Reserved. Support Clean India 🇮🇳</p>
+</footer>
+
+<!-- STICKY MOBILE/TABLET BUY BAR -->
+<div class="sticky-bar">
+<div>
+  <div style="font-size: 0.76rem; color: var(--text-muted);" id="stickyPackText">Pack of 20 Bags</div>
+  <div style="font-size: 1.12rem; font-weight: 800;" id="stickyPriceText">₹449 <span style="font-size:0.78rem; color:var(--accent);">Save 47%</span></div>
+</div>
+<button type="button" id="stickyBuyBtn" class="buy-btn">View All Options</button>
+</div>
+
+<script>
+// Floating mobile/tablet Buy Now button scrolls to pack selector section
+const stickyBtn = document.getElementById("stickyBuyBtn");
+stickyBtn.removeAttribute("href");
+stickyBtn.onclick = (e) => {
+  e.preventDefault();
+  const mrpEl = document.getElementById("mrpSection");
+  if (mrpEl) {
+    const headerHeight = document.querySelector("header")?.offsetHeight || 70;
+    const y = mrpEl.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+  }
+};
+
+// ==========================================
+// 1. PRODUCT CONFIGURATION
+// ==========================================
+const PACKS = [
+  {
+    qty: 10,
+    label: "Pack of 10",
+    mrp: 559,
+    price: 440,
+    badge: ""
+  },
+  {
+    qty: 20,
+    label: "Pack of 20",
+    mrp: 1180,
+    price: 840,
+    badge: "Most Popular"
+  },
+  {
+    qty: 40,
+    label: "Pack of 40",
+    mrp: 2360,
+    price: 1600,
+    badge: "Best Value"
+  }
+];
+
+const MEDIA_ITEMS = [
+  { type: "image", src: "assets/vomitbag-1.jpg", alt: "Solidifier Disposable Vomit Bag" },
+  { type: "image", src: "assets/vomitbag-2.jpg", alt: "Discreet Hygienic Safe Travel Vomit Bag" },
+  { type: "video", src: "assets/vomitbag-demo.mp4", thumb: "assets/vomitbag-2.jpg", alt: "Demo Video" },
+  { type: "image", src: "assets/vomitbag-3.jpg", alt: "Multiple Use Cases" },
+  { type: "image", src: "assets/vomitbag-4.jpg", alt: "Discreet Hygienic Safe Travel Vomit Bag" },
+  { type: "image", src: "assets/vomitbag-5.jpg", alt: "Discreet Hygienic Safe Travel Vomit Bag" },
+  { type: "image", src: "assets/vomitbag-6.jpg", alt: "Discreet Hygienic Safe Travel Vomit Bag" },
+  { type: "image", src: "assets/vomitbag-7.jpg", alt: "Discreet Hygienic Safe Travel Vomit Bag" }
+];
+
+// ==========================================
+// 2. MOBILE NAVIGATION MENU
+// ==========================================
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const navLinks = document.getElementById("navLinks");
+
+mobileMenuBtn.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  mobileMenuBtn.textContent = isOpen ? "✕" : "☰";
+  mobileMenuBtn.setAttribute("aria-expanded", isOpen);
+});
+
+function closeMobileMenu() {
+  navLinks.classList.remove("open");
+  mobileMenuBtn.textContent = "☰";
+  mobileMenuBtn.setAttribute("aria-expanded", "false");
+}
+
+// ==========================================
+// 3. DAILY AUTO-UPDATING SOCIAL PROOF METRICS
+// ==========================================
+function updateDailyMetrics() {
+  const now = new Date();
+  const daySeed = Math.floor(now.getTime() / (1000 * 60 * 60 * 24));
+  const dayOfMonth = now.getDate();
+
+  const dailyViews = 162 + ((daySeed * 41) % 150);
+  const monthlySold = 1480 + (dayOfMonth * 58) + ((daySeed * 19) % 45);
+
+  document.getElementById("dailyViews").textContent = dailyViews.toLocaleString("en-IN");
+  document.getElementById("monthlySold").textContent = monthlySold.toLocaleString("en-IN") + "+";
+  document.getElementById("year").textContent = now.getFullYear();
+}
+
+// ==========================================
+// 4. PACK SELECTION & RAZORPAY TRIGGER
+// ==========================================
+let selectedPackIndex = 1;
+
+function renderPacks() {
+  const grid = document.getElementById("packGrid");
+  grid.innerHTML = PACKS.map((pack, idx) => {
+    const perBag = (pack.price / pack.qty).toFixed(1);
+    return `
+      <div class="pack-card ${idx === selectedPackIndex ? 'selected' : ''}" onclick="selectPack(${idx})">
+        ${pack.badge ? `<span class="pack-badge">${pack.badge}</span>` : ''}
+        <div class="pack-qty">${pack.label}</div>
+        <div class="pack-price">₹${pack.price}</div>
+        <div class="pack-unit">₹${perBag}/bag</div>
+      </div>
+    `;
+  }).join("");
+}
+
+function selectPack(index) {
+  selectedPackIndex = index;
+  const pack = PACKS[index];
+  const discount = Math.round(((pack.mrp - pack.price) / pack.mrp) * 100);
+  const perUnit = (pack.price / pack.qty).toFixed(2);
+
+  document.getElementById("displayPrice").textContent = `₹${pack.price}`;
+  document.getElementById("displayMrp").textContent = `MRP ₹${pack.mrp}`;
+  document.getElementById("displayDiscount").textContent = `${discount}% OFF`;
+  document.getElementById("perUnitText").textContent = `₹${perUnit} per bag`;
+
+  document.querySelectorAll(".rzp-pack-btn").forEach((btn) => {
+    const btnIndex = Number(btn.getAttribute("data-pack-index"));
+    btn.classList.toggle("active", btnIndex === index);
+  });
+
+  document.getElementById("stickyPackText").textContent = `${pack.label} (${pack.qty} Bags)`;
+  document.getElementById("stickyPriceText").innerHTML = `₹${pack.price} <span style="font-size:0.78rem; color:var(--accent);">Save ${discount}%</span>`;
+
+  renderPacks();
+}
+
+function triggerRazorpayPack(packIndex, attempt = 0) {
+  const pack = PACKS[packIndex];
+  if (!pack) return;
+
+  if (attempt === 0 && typeof fbq === "function") {
+    console.log("ViewContent", { currency: "INR", value: pack?.price, num_items: pack.qty });
+    fbq("track", "ViewContent", { currency: "INR", value: pack?.price, num_items: pack.qty });
+  }
+  if (typeof fbq === "function") {
+    fbq("track", "InitiateCheckout");
+  }
+
+  const container = document.querySelector(`.rzp-hidden-pack[data-pack-index="${packIndex}"]`);
+  const rzpBtn = container ? container.querySelector("button, a, input[type='submit']") : null;
+
+  if (rzpBtn) {
+    rzpBtn.click();
+    return;
+  }
+
+  if (attempt < 15) {
+    setTimeout(() => triggerRazorpayPack(packIndex, attempt + 1), 200);
+    return;
+  }
+
+  alert("Razorpay button did not load. Please check your internet/ad-blocker or refresh the page.");
+}
+
+// ==========================================
+// 5. CAROUSEL LOGIC + TOUCH SWIPE SUPPORT
+// ==========================================
+let currentSlide = 0;
+
+function renderCarousel() {
+  const stage = document.getElementById("mainStage");
+  const item = MEDIA_ITEMS[currentSlide];
+
+  if (item.type === "video") {
+    stage.innerHTML = `
+      <video controls autoplay muted loop playsinline poster="${item.thumb}">
+        <source src="${item.src}" type="video/mp4">
+      </video>
+    `;
+  } else {
+    stage.innerHTML = `<img src="${item.src}" alt="${item.alt}" />`;
+  }
+
+  const thumbsRow = document.getElementById("thumbsRow");
+  thumbsRow.innerHTML = MEDIA_ITEMS.map((m, idx) => `
+    <div class="thumb ${idx === currentSlide ? 'active' : ''}" onclick="goToSlide(${idx})">
+      <img src="${m.type === 'video' ? m.thumb : m.src}" alt="${m.alt}" />
+      ${m.type === 'video' ? '<div class="thumb-video-badge">▶</div>' : ''}
+    </div>
+  `).join("");
+}
+
+function changeSlide(dir) {
+  currentSlide = (currentSlide + dir + MEDIA_ITEMS.length) % MEDIA_ITEMS.length;
+  renderCarousel();
+}
+
+function goToSlide(idx) {
+  currentSlide = idx;
+  renderCarousel();
+}
+
+let touchStartX = 0;
+const mainStageEl = document.getElementById("mainStage");
+mainStageEl.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+mainStageEl.addEventListener("touchend", (e) => {
+  const diff = touchStartX - e.changedTouches[0].screenX;
+  if (Math.abs(diff) > 40) {
+    changeSlide(diff > 0 ? 1 : -1);
+  }
+}, { passive: true });
+
+// ==========================================
+// 6. TABS, FAQ & CONTACT HANDLERS
+// ==========================================
+function openTab(evt, tabId) {
+  document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById(tabId).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+
+function toggleFaq(btn) {
+  btn.parentElement.classList.toggle("open");
+}
+
+function handleContact(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("contactName").value.trim();
+  const phone = document.getElementById("contactPhone").value.trim();
+  const message = document.getElementById("contactMessage").value.trim();
+
+  const whatsappText =
+    `Hello Solidifier Team,%0A` +
+    `Name: ${encodeURIComponent(name)}%0A` +
+    `Mobile: ${encodeURIComponent(phone)}%0A` +
+    `Message: ${encodeURIComponent(message)}`;
+
+  const whatsappUrl = `https://wa.me/919313829678?text=${whatsappText}`;
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  document.getElementById("contactStatus").textContent = "Opening WhatsApp with your message...";
+  e.target.reset();
+}
+
+// Initialize Page
+updateDailyMetrics();
+renderCarousel();
+selectPack(0);
+</script>
+</body>
+</html>
